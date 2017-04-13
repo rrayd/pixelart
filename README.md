@@ -1,2 +1,6 @@
 # pixelart
-test task for work
+Test task for work
+
+```terminal
+npm install
+gulp serve
