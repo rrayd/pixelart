@@ -1,1 +1,3 @@
-console.log('\'Allo \'Allo!');
+console.log('Welcome to PixelApp by Dmitry Raikov');
+
+
