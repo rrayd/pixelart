@@ -21,9 +21,9 @@ function pixelapp () {
 			e.target.style.background = brush_color;
 		};
 	};
-	pa_drawing.onmouseup = function () {
+	document.onmouseup = function () {
 		pa_drawing.onmousemove = null;
-	}
+	};
 };
 
 // генерация растрового поля
