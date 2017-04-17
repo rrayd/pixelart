@@ -1,4 +1,5 @@
 @import compass
+@import url('https://fonts.googleapis.com/css?family=PT+Sans')
 
 .browserupgrade
   margin: 0.2em 0
@@ -6,9 +7,42 @@
   color: #000
   padding: 0.2em 0
 
+// pixel app color cheme
+
+$c-dark: #2b2f4e
+$c-light1: #8edebe
+$c-light2: #EE4A72
+
+// pixel app styles
+
 body
-  background: #fafafa
-  color: #333
+  margin: 0
+  padding: 0
+  background-color: $c-dark
+  font-family: 'PT Sans', sans-serif
+  color: #fff
 
 .pixel-app
-  text-align: center
+  margin: 0 auto
+  padding-top: 46px
+  width: 480px
+.pa-link
+  color: $c-light1
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+.pa-header
+  position: relative
+.pa-annotation
+  position: absolute
+  left: 143px
+  bottom: -30px
+  font-size: 10pt
+  font-weight: normal
+
+.pa-drawing
+  margin-top: 85px
+  width: 480px
+  height: 480px
+  background-color: rgba(255,255,255,0.1)
