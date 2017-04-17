@@ -1,25 +1,35 @@
 'use strict';
 
 // pixelapp
-
 function pixelapp () {
 
-	// запрещаем выделение текста
+	// запрет выделения текста
 	document.ondragstart = function() { return false };
 	document.body.onselectstart = function() { return false };
 
-	// определяем переменные
-	var pa_factor = 3;
+	var pa_factor = 32,
+		brush_color = '#ee4a72',
+		pa_drawing = document.getElementById('pa-drawing');
 
-	// генерируем растровое поле
-	raster(pa_factor);
+	// генерация растрового поля
+	raster(pa_factor, pa_drawing);
+
+	// рисование
+	pa_drawing.onmousedown = function (e) {
+		e.target.style.background = brush_color;
+		pa_drawing.onmousemove = function (e) {
+			e.target.style.background = brush_color;
+		};
+	};
+	pa_drawing.onmouseup = function () {
+		pa_drawing.onmousemove = null;
+	}
 };
 
-// функция генерации растрового поля
-function raster (pa_factor) {
+// генерация растрового поля
+function raster (pa_factor, pa_drawing) {
 	var pa_block_size,
-		pa_block_counter,
-		pa_drawing = document.getElementById('pa-drawing');
+		pa_block_counter;
 
 	// определение параметров нового поля
 	pa_block_size = 480 / pa_factor;
