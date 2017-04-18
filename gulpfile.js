@@ -89,8 +89,14 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
+gulp.task('fonts', () => {
+  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
+    .concat('app/fonts/**/*'))
+    .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
+});
+
 gulp.task('serve', () => {
-  runSequence(['clean'], ['styles', 'scripts'], () => {
+  runSequence(['clean'], ['styles', 'scripts', 'fonts'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
@@ -103,14 +109,16 @@ gulp.task('serve', () => {
 
     gulp.watch([
       'app/*.html',
-      'app/images/**/*'
+      'app/images/**/*',
+      '.tmp/fonts/**/*'
     ]).on('change', reload);
 
     gulp.watch('app/styles/**/*.sass', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
+    gulp.watch('app/fonts/**/*', ['fonts']);
   });
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'extras', 'fonts'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
