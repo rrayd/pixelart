@@ -25,22 +25,77 @@
         </h1>
       </div>
       <div class="pa-panel">
-        <div class="pa-new"></div>
-        <div class="pa-size">
+        <div class="pa-new pa-control-block">
           <div class="pa-cnt-body">
-            <div class="pa-cnt-header">Size</div>
-            <div class="pa-cnt-content">32 x 32 px</div>
+            <div class="pa-cnt-header"> </div>
+            <div id="pa-new" class="pa-control">
+              <span class="icon-file-o"></span>
+              <span class="pa-helper">Create new</span>
+            </div>
+          </div>
+        </div>
+        <div class="pa-size pa-control-block">
+          <div class="pa-cnt-body">
+            <div class="pa-cnt-header">Document size</div>
+            <div class="pa-cnt-content"><span id="pa-ui-factor"></span></div>
             <div class="pa-cnt-controls">
               <div id="pa-size-down" class="pa-control">
+                <span class="icon-minus-circle"></span>
+                <span class="pa-helper">Reduce</span>
+              </div>
+              <div id="pa-size-up" class="pa-control">
                 <span class="icon-plus-circle"></span>
-                <span class="pa-helper" disabled></span>
+                <span class="pa-helper">Enlarge</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="pa-color"></div>
-        <div class="pa-mode"></div>
-        <div class="pa-rotator"></div>
+        <div class="pa-color pa-control-block">
+          <div class="pa-cnt-body">
+            <div class="pa-cnt-header">Colors</div>
+            <div class="pa-cnt-controls">
+              <div class="pa-control">
+                <span id="pa-color-backgound" class="pa-colorpicker"></span>
+                <!-- <input id="pa-input-background" class="pa-input-background"> -->
+                <span class="pa-helper">Background</span>
+              </div>
+              <div class="pa-control">
+                <span id="pa-color-painting" class="pa-colorpicker"></span>
+                <span class="pa-helper">Brush</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pa-mode pa-control-block">
+          <div class="pa-cnt-body">
+            <div class="pa-cnt-header">Mode</div>
+            <div class="pa-cnt-controls">
+              <div id="pa-new" class="pa-control">
+                <span class="icon-paint-brush"></span>
+                <span class="pa-helper">Brush</span>
+              </div>
+              <div id="pa-new" class="pa-control">
+                <span class="icon-eraser"></span>
+                <span class="pa-helper">Eraser</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pa-rotator pa-control-block">
+          <div class="pa-cnt-body">
+            <div class="pa-cnt-header"> </div>
+            <div class="pa-cnt-controls">
+              <div id="pa-new" class="pa-control">
+                <span class="icon-rotate-left"></span>
+                <span class="pa-helper">To left</span>
+              </div>
+              <div id="pa-new" class="pa-control">
+                <span class="icon-repeat"></span>
+                <span class="pa-helper">To right</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="pa-drawing">
         

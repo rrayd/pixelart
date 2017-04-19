@@ -26,7 +26,7 @@ body
 
 .pixel-app
   margin: 0 auto
-  padding-top: 46px
+  padding-top: 36px
   width: 480px
 .pa-link
   color: $c-light1
@@ -44,11 +44,83 @@ body
   font-weight: normal
 
 #pa-drawing
-  margin-top: 85px
   width: 480px
-  height: 480px
-  background-color: rgba(255,255,255,0.1)
+  height: auto
   line-height: 12px
 .pa-db
+  display: block
+  +float-left
+  +background-image(linear-gradient(45deg, $c-light1, adjust-lightness($c-light1, 10%)))
+
+
+// pixel app controls
+.pa-panel
+  margin-top: 71px
+  margin-bottom: 21px 
+.pa-control
   display: inline-block
-  background: linear-gradient(120deg, $c-light1, $c-light2);
+  position: relative
+  color: $c-light1
+  cursor: pointer
+.pa-control:hover
+  color: adjust-lightness($c-light1, 10%)
+  .pa-helper
+    top: -38px
+    left: -6px
+    opacity: 1
+.pa-helper
+  position: absolute
+  top: -25px
+  left: -9999px
+  padding: 5px 10px
+  font-size: 10pt
+  font-weight: bold
+  color: $c-dark
+  background-color: adjust-lightness($c-light1, 10%)
+  opacity: 0
+  white-space: nowrap
+  +transition(top 0.3s ease, opacity 0.3s ease)
+  +border-radius(2px)
+.pa-helper
+  &:before
+    display: block
+    position: absolute
+    content: " "
+    top: 22px
+    left: 8px
+    width: 11px
+    height: 11px
+    background-color: adjust-lightness($c-light1, 10%)
+    +rotate(45deg)
+.pa-cnt-header
+  margin-bottom: 3px
+  font-size: 8pt
+  color: $c-light2
+.pa-cnt-content
+  display: inline-block
+  vertical-align: top
+  font-size: 10pt
+.pa-cnt-controls
+  display: inline-block
+  vertical-align: top
+
+.pa-control-block
+  display: inline-block
+  color: $c-light1
+.pa-new
+  width: 38px
+.pa-size
+  width: 130px
+#pa-ui-factor
+  display: inline-block
+  width: 66px
+.pa-color
+  width: 68px
+.pa-colorpicker
+  display: inline-block
+  margin-top: 1px
+  width: 16px
+  height: 16px
+  +border-radius(8px)
+.pa-mode
+  width: 195px
